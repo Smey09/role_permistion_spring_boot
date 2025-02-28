@@ -75,6 +75,7 @@ INSERT INTO ROLE_PERMISSION_RELATION_TABLE (ROLE_ID, PERMISSION_ID)
 SELECT r.ID, p.ID FROM ROLES r, PERMISSIONS p
 WHERE r.NAME = 'USER' AND p.NAME = 'user:get';
 ```
+</details>
 
 [![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white&style=for-the-badge)](https://dev.mysql.com/downloads/)
 
@@ -126,6 +127,7 @@ INSERT INTO ROLE_PERMISSION_RELATION_TABLE (ROLE_ID, PERMISSION_ID)
 SELECT r.ID, p.ID FROM ROLES r, PERMISSIONS p
 WHERE r.NAME = 'USER' AND p.NAME = 'user:get';
 ```
+</details>
 
 ### Explore Rest APIs
 
