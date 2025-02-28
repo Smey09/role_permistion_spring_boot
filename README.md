@@ -269,14 +269,14 @@ The application can be built and run by the `Docker` engine. The `Dockerfile` ha
 Please follow directions shown below in order to build and run the application with Docker Compose file;
 
 ```sh
-$ cd rolepermissionexample
+$ cd role_permistion_spring_boot
 $ docker-compose up -d
 ```
 
 If you change anything in the project and run it on Docker, you can also use this command shown below
 
 ```sh
-$ cd rolepermissionexample
+$ cd role_permistion_spring_boot
 $ docker-compose up --build
 ```
 
@@ -285,7 +285,7 @@ $ docker-compose up --build
 To build and run the application with `Maven`, please follow the directions shown below;
 
 ```sh
-$ cd rolepermissionexample
+$ cd role_permistion_spring_boot
 $ mvn clean install
 $ mvn spring-boot:run
 ```
