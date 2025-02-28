@@ -1,6 +1,26 @@
 server:
   port: 9991
 
+# Database Configuration (PostgreSQL)
+#spring:
+#  application:
+#    name: stock-management
+#  datasource:
+#    driver-class-name: org.postgresql.Driver
+#    url: jdbc:postgresql://localhost:5432/stock-management
+#    username: postgres
+#    password: smey44
+#  jpa:
+#    properties:
+#      hibernate:
+#        format_sql: true
+#    hibernate:
+#      ddl-auto: update
+#      dialect: org.hibernate.dialect.PostgreSQLDialect
+#  sql:
+#    init:
+#      mode: always
+
 # MYSQL
 spring:
   config:

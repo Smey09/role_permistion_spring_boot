@@ -23,6 +23,109 @@
   </ul>
 </ul>
 
+### Database
+
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-336791?logo=postgresql&logoColor=white&style=for-the-badge)](https://www.postgresql.org/download/)
+
+<details>
+  <summary>Show SQL Script</summary>
+
+```sql
+-- Insert roles
+INSERT INTO ROLES (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (gen_random_uuid(), 'ADMIN', NOW(), 'system', NOW(), 'system');
+
+INSERT INTO ROLES (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (gen_random_uuid(), 'USER', NOW(), 'system', NOW(), 'system');
+
+-- Insert permissions
+INSERT INTO PERMISSIONS (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (gen_random_uuid(), 'admin:create', NOW(), 'system', NOW(), 'system');
+
+INSERT INTO PERMISSIONS (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (gen_random_uuid(), 'admin:get', NOW(), 'system', NOW(), 'system');
+
+INSERT INTO PERMISSIONS (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (gen_random_uuid(), 'admin:update', NOW(), 'system', NOW(), 'system');
+
+INSERT INTO PERMISSIONS (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (gen_random_uuid(), 'admin:delete', NOW(), 'system', NOW(), 'system');
+
+INSERT INTO PERMISSIONS (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (gen_random_uuid(), 'user:get', NOW(), 'system', NOW(), 'system');
+
+-- Insert role-permission relations
+INSERT INTO ROLE_PERMISSION_RELATION_TABLE (ROLE_ID, PERMISSION_ID)
+SELECT r.ID, p.ID FROM ROLES r, PERMISSIONS p
+WHERE r.NAME = 'ADMIN' AND p.NAME = 'admin:create';
+
+INSERT INTO ROLE_PERMISSION_RELATION_TABLE (ROLE_ID, PERMISSION_ID)
+SELECT r.ID, p.ID FROM ROLES r, PERMISSIONS p
+WHERE r.NAME = 'ADMIN' AND p.NAME = 'admin:get';
+
+INSERT INTO ROLE_PERMISSION_RELATION_TABLE (ROLE_ID, PERMISSION_ID)
+SELECT r.ID, p.ID FROM ROLES r, PERMISSIONS p
+WHERE r.NAME = 'ADMIN' AND p.NAME = 'admin:update';
+
+INSERT INTO ROLE_PERMISSION_RELATION_TABLE (ROLE_ID, PERMISSION_ID)
+SELECT r.ID, p.ID FROM ROLES r, PERMISSIONS p
+WHERE r.NAME = 'ADMIN' AND p.NAME = 'admin:delete';
+
+INSERT INTO ROLE_PERMISSION_RELATION_TABLE (ROLE_ID, PERMISSION_ID)
+SELECT r.ID, p.ID FROM ROLES r, PERMISSIONS p
+WHERE r.NAME = 'USER' AND p.NAME = 'user:get';
+```
+
+[![MySQL](https://img.shields.io/badge/MySQL-4479A1?logo=mysql&logoColor=white&style=for-the-badge)](https://dev.mysql.com/downloads/)
+
+<details>
+  <summary>Show SQL Script</summary>
+
+```sql
+-- Insert roles
+INSERT INTO ROLES (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (UUID(), 'ADMIN', NOW(), 'system', NOW(), 'system');
+
+INSERT INTO ROLES (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (UUID(), 'USER', NOW(), 'system', NOW(), 'system');
+
+-- Insert permissions
+INSERT INTO PERMISSIONS (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (UUID(), 'admin:create', NOW(), 'system', NOW(), 'system');
+
+INSERT INTO PERMISSIONS (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (UUID(), 'admin:get', NOW(), 'system', NOW(), 'system');
+
+INSERT INTO PERMISSIONS (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (UUID(), 'admin:update', NOW(), 'system', NOW(), 'system');
+
+INSERT INTO PERMISSIONS (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (UUID(), 'admin:delete', NOW(), 'system', NOW(), 'system');
+
+INSERT INTO PERMISSIONS (ID, NAME, CREATED_AT, CREATED_BY, UPDATED_AT, UPDATED_BY)
+VALUES (UUID(), 'user:get', NOW(), 'system', NOW(), 'system');
+
+-- Insert role-permission relations
+INSERT INTO ROLE_PERMISSION_RELATION_TABLE (ROLE_ID, PERMISSION_ID)
+SELECT r.ID, p.ID FROM ROLES r, PERMISSIONS p
+WHERE r.NAME = 'ADMIN' AND p.NAME = 'admin:create';
+
+INSERT INTO ROLE_PERMISSION_RELATION_TABLE (ROLE_ID, PERMISSION_ID)
+SELECT r.ID, p.ID FROM ROLES r, PERMISSIONS p
+WHERE r.NAME = 'ADMIN' AND p.NAME = 'admin:get';
+
+INSERT INTO ROLE_PERMISSION_RELATION_TABLE (ROLE_ID, PERMISSION_ID)
+SELECT r.ID, p.ID FROM ROLES r, PERMISSIONS p
+WHERE r.NAME = 'ADMIN' AND p.NAME = 'admin:update';
+
+INSERT INTO ROLE_PERMISSION_RELATION_TABLE (ROLE_ID, PERMISSION_ID)
+SELECT r.ID, p.ID FROM ROLES r, PERMISSIONS p
+WHERE r.NAME = 'ADMIN' AND p.NAME = 'admin:delete';
+
+INSERT INTO ROLE_PERMISSION_RELATION_TABLE (ROLE_ID, PERMISSION_ID)
+SELECT r.ID, p.ID FROM ROLES r, PERMISSIONS p
+WHERE r.NAME = 'USER' AND p.NAME = 'user:get';
+```
 
 ### Explore Rest APIs
 
